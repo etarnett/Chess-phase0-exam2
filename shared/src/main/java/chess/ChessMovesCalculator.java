@@ -28,6 +28,14 @@ public class ChessMovesCalculator {
             return QueenMoves.calculate(board, position, piece);
         }
 
+        if (piece.getPieceType() == ChessPiece.PieceType.KING) {
+            return KingMoves.calculate(board, position, piece);
+        }
+
+        if (piece.getPieceType() == ChessPiece.PieceType.KNIGHT) {
+            return KnightMoves.calculate(board, position, piece);
+        }
+
 
         return moves;
     }
