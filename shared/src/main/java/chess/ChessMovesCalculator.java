@@ -36,6 +36,9 @@ public class ChessMovesCalculator {
             return KnightMoves.calculate(board, position, piece);
         }
 
+        if (piece.getPieceType() == ChessPiece.PieceType.PAWN) {
+            return PawnMoves.calculate(board, position, piece);
+        }
 
         return moves;
     }

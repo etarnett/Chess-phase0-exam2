@@ -64,6 +64,23 @@ public class MoveHelper {
         }
     }
 
+    public static void promotion(
+            ChessPosition start,
+            ChessPosition end,
+            int promotionRow,
+            Collection<ChessMove> moves
+    ) {
+        if (end.getRow() == promotionRow) {
+            moves.add(new ChessMove(start, end, ChessPiece.PieceType.QUEEN));
+            moves.add(new ChessMove(start, end, ChessPiece.PieceType.BISHOP));
+            moves.add(new ChessMove(start, end, ChessPiece.PieceType.ROOK));
+            moves.add(new ChessMove(start, end, ChessPiece.PieceType.KNIGHT));
+        } else {
+            moves.add(new ChessMove(start, end, null));
+        }
+    }
+
+
     public static boolean inBounds(int row, int col) {
         return row >= 1 && row <= 8 && col >= 1 && col <=8;
     }

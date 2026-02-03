@@ -1,7 +1,7 @@
 package chess;
 import java.util.*;
 
-// King moves: using jump instead of slide, checks in each direction
+// Knight moves: using jump instead of slide, checks in each L direction
 public class KnightMoves {
     public static Collection<ChessMove> calculate(
             ChessBoard board,
@@ -19,7 +19,6 @@ public class KnightMoves {
         MoveHelper.jump(board, start, piece, -1, 2, moves);
         MoveHelper.jump(board, start, piece, 1, -2, moves);
         MoveHelper.jump(board, start, piece, -1, -2, moves);
-
 
         return moves;
     }
